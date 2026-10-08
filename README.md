@@ -1,5 +1,8 @@
 # dotnet-clean-base
 
+[![CI](https://github.com/harryagamez/dotnet-clean-base/actions/workflows/ci.yml/badge.svg)](https://github.com/harryagamez/dotnet-clean-base/actions/workflows/ci.yml)
+[![Template](https://github.com/harryagamez/dotnet-clean-base/actions/workflows/template.yml/badge.svg)](https://github.com/harryagamez/dotnet-clean-base/actions/workflows/template.yml)
+
 Línea base para proyectos backend en **.NET 10** con **Clean Architecture**. Trae un núcleo compartido (Domain, Application, Infrastructure) y dos hosts que lo reutilizan: una **Web API** con Minimal APIs y una **Azure Function App** con HTTP triggers. Incluye un ejemplo completo (CRUD de productos), tests en todas las capas y CI.
 
 Sirve como plantilla: generas una solución nueva con tu propio nombre y empiezas a trabajar sobre una base que ya compila, pasa los tests y sigue buenas prácticas.
@@ -79,7 +82,7 @@ Dentro de cada capa el código se organiza **por feature** (`Products/Create`, `
 **Opción A: plantilla `dotnet new` (recomendada).** Instálala una vez desde una copia local del repositorio:
 
 ```powershell
-git clone <url-de-este-repo> dotnet-clean-base
+git clone https://github.com/harryagamez/dotnet-clean-base.git
 dotnet new install ./dotnet-clean-base
 ```
 

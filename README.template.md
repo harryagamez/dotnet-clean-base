@@ -1,6 +1,6 @@
 # CleanBase
 
-Solución .NET 10 con Clean Architecture, generada con la plantilla `dotnet-clean-base`.
+Solución .NET 10 con Clean Architecture, generada con la plantilla [dotnet-clean-base](https://github.com/harryagamez/dotnet-clean-base).
 
 ## Primeros pasos
 
