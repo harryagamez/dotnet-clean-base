@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CleanBase.Domain\CleanBase.Domain.csproj" />
+    <ProjectReference Include="..\..\src\CleanBase.Application\CleanBase.Application.csproj" />
+    <ProjectReference Include="..\..\src\CleanBase.Infrastructure\CleanBase.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetArchTest.Rules" />
+  </ItemGroup>
+
+</Project>

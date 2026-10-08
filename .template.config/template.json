@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Harry Agamez",
+  "classifications": ["Web", "API", "Azure Functions", "Clean Architecture"],
+  "identity": "CleanBase.Solution",
+  "name": "Clean Architecture base (Web API + Azure Functions)",
+  "description": "Clean Architecture baseline for .NET: Domain, Application, Infrastructure, a Web API host and an Azure Functions host, with tests and CI.",
+  "shortName": "cleanbase",
+  "sourceName": "CleanBase",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            ".git/**",
+            ".vs/**",
+            ".idea/**",
+            "**/bin/**",
+            "**/obj/**",
+            "**/TestResults/**",
+            "**/local.settings.json",
+            ".github/workflows/template.yml",
+            "CLAUDE.md",
+            "README.md",
+            "LICENSE"
+          ]
+        },
+        {
+          "rename": {
+            "README.template.md": "README.md"
+          }
+        }
+      ]
+    }
+  ]
+}

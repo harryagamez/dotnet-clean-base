@@ -1,0 +1,42 @@
+# Verifies that the repository still works as a "dotnet new" template:
+# a solution generated with another name must build and pass its tests.
+# This workflow is excluded from generated projects (see .template.config/template.json).
+name: Template
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  generate-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+
+      - name: Install the template from this repository
+        run: dotnet new install ./
+
+      - name: Generate a solution with another name
+        run: dotnet new cleanbase --name Acme.Billing --output "$RUNNER_TEMP/acme"
+
+      - name: Check that the old name is gone
+        working-directory: ${{ runner.temp }}/acme
+        run: |
+          if grep -rIl "CleanBase" .; then
+            echo "Found leftovers of the template name" && exit 1
+          fi
+
+      - name: Build and test the generated solution
+        working-directory: ${{ runner.temp }}/acme
+        run: |
+          dotnet build --configuration Release
+          dotnet test --configuration Release --no-build

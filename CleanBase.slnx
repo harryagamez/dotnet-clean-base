@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CleanBase.Application/CleanBase.Application.csproj" />
+    <Project Path="src/CleanBase.Domain/CleanBase.Domain.csproj" />
+    <Project Path="src/CleanBase.Infrastructure/CleanBase.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Hosts/">
+    <Project Path="src/Hosts/CleanBase.Api/CleanBase.Api.csproj" />
+    <Project Path="src/Hosts/CleanBase.FunctionApp/CleanBase.FunctionApp.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CleanBase.Api.IntegrationTests/CleanBase.Api.IntegrationTests.csproj" />
+    <Project Path="tests/CleanBase.Application.UnitTests/CleanBase.Application.UnitTests.csproj" />
+    <Project Path="tests/CleanBase.ArchitectureTests/CleanBase.ArchitectureTests.csproj" />
+    <Project Path="tests/CleanBase.Domain.UnitTests/CleanBase.Domain.UnitTests.csproj" />
+    <Project Path="tests/CleanBase.FunctionApp.UnitTests/CleanBase.FunctionApp.UnitTests.csproj" />
+  </Folder>
+</Solution>

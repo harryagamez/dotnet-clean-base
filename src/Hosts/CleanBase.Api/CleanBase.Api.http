@@ -1,0 +1,43 @@
+@baseUrl = https://localhost:7100
+
+### List products
+GET {{baseUrl}}/products
+
+### Create a product
+# @name createProduct
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Mechanical keyboard",
+  "sku": "kb-001",
+  "price": 89.90
+}
+
+### Get the created product
+GET {{baseUrl}}/products/{{createProduct.response.body.$}}
+
+### Update it
+PUT {{baseUrl}}/products/{{createProduct.response.body.$}}
+Content-Type: application/json
+
+{
+  "name": "Mechanical keyboard (ES layout)",
+  "price": 94.50
+}
+
+### Invalid request: returns 400 with one entry per field
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "sku": "",
+  "price": -1
+}
+
+### Delete it
+DELETE {{baseUrl}}/products/{{createProduct.response.body.$}}
+
+### Health check
+GET {{baseUrl}}/health
